@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_bookings",
+  "info": {
+    "name": "UserBooking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "fromDate": {
+      "type": "date"
+    },
+    "mobile": {
+      "type": "biginteger"
+    },
+    "toDate": {
+      "type": "date"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "user_bookings"
+    },
+    "trip": {
+      "model": "trip",
+      "via": "user_bookings"
+    }
+  }
+}
